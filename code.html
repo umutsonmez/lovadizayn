@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LOVA DIZAYN | Kişiye Özel Mimari Tasarım</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary": "#695c4c",
+                        "on-tertiary-fixed": "#1a1c1d",
+                        "tertiary-container": "#292a2c",
+                        "outline-variant": "#cfc4bd",
+                        "surface": "#faf9f7",
+                        "surface-bright": "#faf9f7",
+                        "outline": "#7e756f",
+                        "on-primary-container": "#96908b",
+                        "primary-container": "#2d2926",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#464749",
+                        "on-surface-variant": "#4d4540",
+                        "surface-container-high": "#e9e8e6",
+                        "surface-variant": "#e3e2e0",
+                        "on-background": "#1a1c1b",
+                        "surface-dim": "#dadad8",
+                        "secondary-fixed-dim": "#d5c4b0",
+                        "on-primary-fixed": "#1e1b18",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#919193",
+                        "tertiary": "#151618",
+                        "surface-tint": "#635d5a",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#cdc5c0",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#e9e1dc",
+                        "surface-container-highest": "#e3e2e0",
+                        "background": "#faf9f7",
+                        "surface-container": "#efeeec",
+                        "on-secondary-fixed-variant": "#514536",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#706252",
+                        "on-surface": "#1a1c1b",
+                        "primary-fixed-dim": "#cdc5c0",
+                        "tertiary-fixed": "#e3e2e4",
+                        "tertiary-fixed-dim": "#c7c6c8",
+                        "inverse-on-surface": "#f1f1ef",
+                        "on-primary-fixed-variant": "#4b4642",
+                        "on-secondary-fixed": "#231a0e",
+                        "primary": "#181512",
+                        "secondary-container": "#f2e0cb",
+                        "inverse-surface": "#2f3130",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#f2e0cb",
+                        "surface-container-low": "#f4f3f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "stack-md": "64px",
+                        "stack-lg": "120px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "300"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "display-lg-mobile": ["44px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scrim-overlay {
+            background: linear-gradient(0deg, rgba(24,21,18,0.6) 0%, rgba(24,21,18,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-primary-fixed uppercase" href="#">LOVA DIZAYN</a>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed border-b border-primary dark:border-primary-fixed pb-1" href="#projeler">Projeler</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#hizmetler">Hizmetler</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#hakkimizda">Hakkımızda</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#iletisim">İletişim</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:bg-secondary transition-all duration-300">
+                Projeni Anlat
+            </button>
+</nav>
+</header>
+<main>
+<!-- Cinematic Hero -->
+<section class="relative h-screen w-full flex items-center justify-start overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury Interior Design" class="w-full h-full object-cover scale-105" data-alt="A cinematic, wide-angle shot of a luxurious modern kitchen and living space with high-end marble finishes, warm wooden cabinetry, and floor-to-ceiling windows showing a soft sunset. The lighting is warm and atmospheric, highlighting the premium craftsmanship and bespoke textures of the architecture. The mood is serene and exclusive, embodying quiet luxury in a Scandinavian-inspired interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUVzK8sThkt4SDy8fiylEVqEbCWIm7OHlBg61CPJ1i8KLBA7ehC41OAsKZ3-2LEcIsZ2tLxx_glOb61apYKo2wYS7Oq2fWzWozOc8ZFNr18L4O14S-ukfT9gKVnDHYWSE0eQAWdmtZS779qaCWCwKQ50PNmZMvyjurDo8d4RmPp7yV0_iESvl00k-Mau8DC-92f5fXJFlQYS_4Q1WL4p5kUpxO2R0DEui_Ox6NbqQkMkL99rLF2NQyv6kFwg7JziZ0lHycxfDJBw"/>
+<div class="absolute inset-0 bg-black/30"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max w-full">
+<div class="max-w-3xl space-y-8">
+<h1 class="font-display-lg text-display-lg text-white leading-tight reveal">
+                        Hayalinizdeki Yaşam Alanlarını Tasarlıyoruz
+                    </h1>
+<p class="font-body-lg text-white/80 max-w-xl reveal" style="transition-delay: 200ms;">
+                        Her proje yaşam tarzınıza özel tasarlanır. Ölçüye göre üretim, özgün tasarım ve kusursuz işçilik ile yaşamınıza değer katan mekanlar.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 reveal" style="transition-delay: 400ms;">
+<a class="bg-white text-primary px-10 py-5 font-label-caps text-label-caps hover:bg-surface-variant transition-all text-center" href="#iletisim">
+                            Projeni Anlat
+                        </a>
+<a class="border border-white text-white px-10 py-5 font-label-caps text-label-caps hover:bg-white/10 transition-all text-center" href="#projeler">
+                            Projelerimizi İncele
+                        </a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 right-margin-desktop animate-bounce hidden md:block">
+<span class="material-symbols-outlined text-white text-4xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Who We Are (Editorial) -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-stack-md items-center" id="hakkimizda">
+<div class="reveal">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-6 block">Biz Kimiz?</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Mimari Estetiği Özgünlükle Buluşturuyoruz</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg">
+<p>LOVA Dizayn olarak, mobilyanın sadece bir eşya değil, yaşam alanının karakterini belirleyen bir mimari unsur olduğuna inanıyoruz.</p>
+<p>Tasarımlarımızda <strong>kişiye özel tasarım</strong> yaklaşımını merkezimize alarak, <strong>özel ölçü üretim</strong> hassasiyetiyle her santimetreyi değerlendiriyoruz. <strong>Kaliteli malzeme</strong> seçimi ve <strong>modern yaşam alanları</strong> vizyonumuzla nesiller boyu sürecek bir estetik vadediyoruz.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 300ms;">
+<img alt="Craftsmanship detail" class="w-full aspect-[3/4] object-cover" data-alt="Close up detail of high-quality wood joinery and natural stone textures in a modern luxury home setting. The lighting is soft and directional, emphasizing the tactile nature of the materials. Minimalist aesthetic with a neutral color palette of beige, grey, and oak wood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx-fReaoKRJ6ojNOuRBbPaCMNW4yKN5RktYanlzJDyqcRc95jmAjutHFhP6Sdiur4rtfyhFfAhQiZHOrjoNA8z7Da1P6k65DG_wel1Ylhz4e3MZ0ppe1MsfYtckSWVOd638tVoNcvkw-mijZnjSFUKKT1j85zHBuHHm6PrTm_a2GKB5g5xetA6L0Kz8sf2JHaH1JKZJQYI025-r4kWRk44p-ey4f8pl3Ko7CBb5VLUpTSO8289bCDakoSp5hlq6EXB51VV_FSe2Q"/>
+<img alt="Studio detail" class="w-full aspect-[3/4] object-cover mt-12" data-alt="Interior of a modern workshop where a designer is reviewing architectural blueprints next to a sample of light oak wood. The environment is clean, bright, and professional, reflecting a studio dedicated to precision and high-end bespoke furniture production." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa9wJk_gYLCW0GH_Pkt4gPdDsl9kAKFTPKzMyeCgv76CS3JLGt2g836W6gUgoGSXPQAI8hc0ojuyUj1A6UdAJDk-oKc73At-KxFoLU-Ao7DMc-oxZGgTfJ3kI1q9BRKH8ogO5R1g2z4U3bElABNR1n6AeIu9BuAZ67P-AW2Po-0zeajGnktx4Xc564ojK0yjO2BVzJp4WF7QPZcZCLZqLrhR5vjjRjjr5uWzh7jxzjPz6tyaJj38Dip6a1RQQl59OsjqEHMcmCyg"/>
+</div>
+</section>
+<!-- Bespoke Philosophy -->
+<section class="bg-primary py-stack-lg px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto flex flex-col items-center text-center">
+<span class="font-label-caps text-label-caps text-on-primary-container mb-12 block reveal">Felsefemiz</span>
+<h2 class="font-display-lg text-display-lg text-white reveal uppercase leading-[0.9]">
+                    Standart Üretim Yapmıyoruz.
+                </h2>
+<p class="font-body-lg text-white/60 mt-12 max-w-2xl reveal">
+                    Her mekan kendine hastır, her ev bir hikaye anlatır. Biz sadece o hikayeyi en kaliteli malzemeler ve en doğru formlarla gerçeğe dönüştürüyoruz.
+                </p>
+</div>
+</section>
+<!-- Services (Luxury Disciplines) -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto" id="hizmetler">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md text-left reveal">Hizmetlerimiz</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service Item 1 -->
+<div class="group relative overflow-hidden aspect-square reveal">
+<img alt="Mutfak Tasarımı" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A modern, minimalist kitchen with matte black cabinetry and a large marble island. Soft natural light streams in from the side, creating a high-contrast, elegant atmosphere. The design is sleek and functional, epitomizing luxury kitchen architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCXJdG8VE0TubL3XuJTYPMgX-PqjNwJKGzkEKdJF7U47j1Sr9FebTBFHY0V0Bxt2wI2sOxFgfW33zVXyDTUfDUYz3MkcL0iYd_d84lOmN2EzHPUbQPw5ael8WaSBI2R6NXH_EbStA_qE4T-h0fyqL5V3zNhqLqHMhxktC0Mm2UiyWZyTqvZz1HpVpY298LTTpGtQAjJd9g1eY_J8JXL95Kam-3gl3ykBuuDlVNuDhvn20S-aeZ7eqwakTjQbh-kJwnb3l6wlwnuQ"/>
+<div class="absolute inset-0 scrim-overlay flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-white">Mutfak Tasarımı</h3>
+<p class="text-white/70 font-label-caps mt-2 group-hover:translate-x-2 transition-transform duration-300">Detayları İncele →</p>
+</div>
+</div>
+<!-- Service Item 2 -->
+<div class="group relative overflow-hidden aspect-square reveal" style="transition-delay: 100ms;">
+<img alt="Vestiyer Tasarımı" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A bespoke hallway wardrobe or cloakroom featuring integrated LED lighting and high-end wood veneer panels. The space is organized and minimalist, with clean vertical lines and hidden handles. Sophisticated residential storage design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM6h5_r9FE-_-sChKbRb5xeSLNlh3tnVq82Aw-oIMawcfTsIaBPfbAmsg-SY3ILeDx3LH6M8cgT1A53fLA334M9Idi1ybLI-UIvR4pb5B4V751ZF6CkvP_q1SSlNuuC_9OZZ8ilRRIh2KRuG-4NZVHKIqI0GDv5mpNACaM2Xx6J7qTYqHp-TY4e3TVgVdBloNsAavWgWWqkqGroa5hLzU0BIVzqotS7ZMKalImvVQFCnAr7ul343wKpRGB66YqOPo9rEPSYW3lCA"/>
+<div class="absolute inset-0 scrim-overlay flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-white">Vestiyer Tasarımı</h3>
+<p class="text-white/70 font-label-caps mt-2 group-hover:translate-x-2 transition-transform duration-300">Detayları İncele →</p>
+</div>
+</div>
+<!-- Service Item 3 -->
+<div class="group relative overflow-hidden aspect-square reveal" style="transition-delay: 200ms;">
+<img alt="Banyo Dolapları" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A spa-like master bathroom with a floating double vanity made of natural stone and wood. Large backlit mirrors and minimal hardware create a serene, premium feel. The environment is bright and airy with high-end architectural fixtures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa1vXjHQtvQM9K9HaNTo_OtmS9vgsssldVU7SA8Qy-uUHN2yhez70FvIcQASamo9ZSRTHCz1CMh-_yfNuSvGE5LBaNf6Ymq5vylHfDhIy5QPBEmKLYJiZB_TbkaQ7IBsqwMdSp2Z7EnU_SGMk93TPillNRJtY8YntTuV5GHBgStcWn_IhAVKIHOsSZCq1Qs3aqFWV0J8qIMjLp3yavBN1-5RlCm_t5YiMKz4WfJG1eBIsOLnZcERvirDvc0pHONTR5YUCy2gcGiw"/>
+<div class="absolute inset-0 scrim-overlay flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-white">Banyo Dolapları</h3>
+<p class="text-white/70 font-label-caps mt-2 group-hover:translate-x-2 transition-transform duration-300">Detayları İncele →</p>
+</div>
+</div>
+<!-- Service Item 4 -->
+<div class="group relative overflow-hidden aspect-square reveal">
+<img alt="TV Üniteleri" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist living room featuring a custom-built TV wall unit with integrated shelving and hidden cable management. The use of walnut wood and subtle grey tones provides a modern, warm feel. Lighting is used to highlight the sculptural qualities of the furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpEw4ElEVQtISKYiGTAW7BgACWhyLfC4It-8PpwAy2iIkMDXQJW8hzVldJ1cLTeqS1wCLF8ByH_CTT-V0T6Bq-FHY6Fq2jwdhslVcWArbV3qCGiZGjoFUtsBG1YkIPAVnGVF0Th_sI09ia4K3k3Jh0e6hFXyPpA4LFtXulZ4ssSKDSbQSbi_5cSKsLXDVwYcLWmQXzr10j8BqcGUg0VSYu3tp83JsRnNXM_bv4rR8h2sTPPWtxzLS_8FHdY8bYrZSBDbWJRTA7tQ"/>
+<div class="absolute inset-0 scrim-overlay flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-white">TV Üniteleri</h3>
+<p class="text-white/70 font-label-caps mt-2 group-hover:translate-x-2 transition-transform duration-300">Detayları İncele →</p>
+</div>
+</div>
+<!-- Service Item 5 -->
+<div class="group relative overflow-hidden aspect-square reveal" style="transition-delay: 100ms;">
+<img alt="Kapı Sistemleri" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High-end interior door systems made of solid dark wood with minimalist brass hardware. The doors are perfectly aligned with the wall panels, showcasing seamless architectural integration and superior craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKIl5COBbUqeLd5fLBl_eRihg3hSdqAuqIqsp4Ru4OhanmQYizytF7hi-nkJIejMy2bJLuHGrgQLoVcjYlWvIiUvWxmCZ0K0eoglw5AqUwnGywHt1lfELkiI2__4ZWw-xFhgoqLZA97KSoewDRzUZ4lqiYmyDTrlYiXy03eOJACobZgDDHIIuj2PFHjKMuLMGM8WOCRd3FlawFEngXuprAckYvhjFLKtpbHqx__hYXZMDnc0-hALfCeAUw3kBZddHX_ELC6fhFvA"/>
+<div class="absolute inset-0 scrim-overlay flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-white">Kapı Sistemleri</h3>
+<p class="text-white/70 font-label-caps mt-2 group-hover:translate-x-2 transition-transform duration-300">Detayları İncele →</p>
+</div>
+</div>
+<!-- Service Item 6 -->
+<div class="group relative overflow-hidden aspect-square reveal" style="transition-delay: 200ms;">
+<img alt="Özel Projeler" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide view of a fully customized architectural interior, showing a cohesive design across furniture, wall coverings, and lighting. The space is expansive and uses a palette of soft greys, whites, and natural woods, creating a luxurious and unified living environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo655dZYS-J7LXk2y2AIjlzrE3FRqdNBPtlTfcf3_69rM2GuBD1B85271HKZqO6qzChf-XIT40DUDUv-IpQLE4LcSFzk61QR77K13tRI3cwc3-cFYEF_QmUFI8L1HKNHb0F2nYSVJYTg-8N2xxggdjID9JXPPxByqsriUX6Psd_ftQDg17vyTJN3nHQC0zIl7s2dzIbCBPtghaVVmewe_cMgdF144QUUi9HHfZMIGpD_D1q3lARZAQjAAGRfh6RXvbaqkNCBL4HQ"/>
+<div class="absolute inset-0 scrim-overlay flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-white">Özel Projeler</h3>
+<p class="text-white/70 font-label-caps mt-2 group-hover:translate-x-2 transition-transform duration-300">Detayları İncele →</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects (Masonry Portfolio) -->
+<section class="bg-surface-container py-stack-lg px-margin-desktop overflow-hidden" id="projeler">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-md gap-8">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-4 block">Portfolyo</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Tamamlanan Projeler</h2>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-4 md:pb-0 no-scrollbar">
+<button class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 whitespace-nowrap">Hepsi</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Mutfak</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Vestiyer</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Banyo</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Kapılar</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 aspect-[16/9] overflow-hidden reveal">
+<img alt="Luxury Bedroom Project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" data-alt="A breathtaking master bedroom with custom floor-to-ceiling wooden wardrobes and a minimalist bed. The lighting is soft and ethereal, coming from hidden recessed strips. The view through large windows shows a tranquil forest at dawn, perfectly complementing the organic, luxury interior design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASENNvIVjeOl9grVzhQJl5uLXNwDAqp9byeoKi6WeDIqhw4jdAgJdkEdoFZK1kWaKwHGUBAolemI_Lj6JfEKOlNSVUr6PEOlcQWBS8CWa4_VBc9a7NmYCwzATbYOFycCGvuBkm5nSwSNwJig8vbgcm7IwSN3Tty-Yf7mHEFg3w87qHxNLD-U3IDpvvG2qc3evxW_O2e6j4JEH8rc5866BKruyUTs6wOVrEAV_Yo6NMfnvspk6eQNVuSy0B2L3PkO-i85Bs1QK_LQ"/>
+</div>
+<div class="md:col-span-4 aspect-square overflow-hidden reveal" style="transition-delay: 200ms;">
+<img alt="Detail Shot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" data-alt="Close up of a premium kitchen island detail showing the intersection of Calacatta marble and dark walnut wood. The craftsmanship is flawless with invisible seams. The overall aesthetic is one of expensive, quiet luxury and architectural precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmFjdAyPmvYVp6uJ2ZiLN_rx0r9gIme_s-uGgM7wSOuRup2XJeAs4tDcvcyIGG7tgW1k5J97L2OTeN86QMjMUyEtAr76HUyC-8lrQULM8Ah_uOLPGRSwt-sPoB2Mpd1_4Zkmy8NRXu8p8R7lNSxmj69JKxLOcOuT_IvBgVbw9iiGVsig3xklnjEV5632GJBU2EcQCnkccAUGV72jyG1ISgDAE7JX9MuzZRHbOKbtPBgYHXy2uO-XyV05U0T-xrTymBpXBwuvVNgQ"/>
+</div>
+<div class="md:col-span-4 aspect-square overflow-hidden reveal" style="transition-delay: 100ms;">
+<img alt="Entryway Project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" data-alt="An elegant residential entryway with a custom-designed door and integrated console table. The space is illuminated by a sculptural pendant light, casting soft shadows on the textured plaster walls. A perfect example of high-end Scandi-minimalist design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWggMSmfX7qnegg7AnVgjgXc0oYQlsBkmBIRii8BX4JJ_ZHUFJjAtW7hbdiN2WwFRAKgEkt2grkUH4VCnfozVWspCM80Py_gFWugoj9mF1t-iQn-1321U14CaYhereHjTJcZHx8r0OQeA0YhYdwRAGGTuFB0Wb2Oo53aZ9CngoEtAGG6NNhMhiAbcDf39nE29XQ_66UMDmnhsCIDUzokgt4b4_vS74vwYH5H9n-h9qPmGspaZPVQLSFVvHbjt2TSK5C_0q9quMyg"/>
+</div>
+<div class="md:col-span-8 aspect-[16/9] overflow-hidden reveal" style="transition-delay: 300ms;">
+<img alt="Living Room Unit" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" data-alt="A wide architectural shot of a contemporary living area where the TV unit and shelving system flow seamlessly into the wall paneling. The color palette is composed of warm beiges, soft greys, and natural textures. Large format tiles on the floor add to the sense of grandeur and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeXBfDF0d85ZFk9kfKoeU18ffXWHwz5Tzy5fPfNbtDs6Rpt4-h6Cx2UYNyKpi3lfEC0dx6K2xOGPIhHrgvuqWORcXozBrk26pWyQ3utgo63b0VCNWE0babm3tdK6AXTfy9KH8NcmBNqZ6qezq5Mloe0brN_MyYvzUiMJodKPXXjFBYCfJaj8EyTAfrC_lNwQtNLoBIpiMZU6inzdEwFEYmIyAjB72fRgVQabEaxcZoXnb9koyb1432EE3IZRH2Z8vfJx-cv61jqQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Design Process -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-stack-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-4 block">Süreç</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Fikirden Teslime Yolculuğumuz</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-gutter">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center reveal">
+<div class="w-16 h-16 rounded-full border border-outline flex items-center justify-center mb-6 font-headline-md text-primary">01</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Keşif</h3>
+<p class="text-body-md text-on-surface-variant">Mekanınızı yerinde görüyor, ihtiyaçlarınızı dinliyoruz.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center reveal" style="transition-delay: 100ms;">
+<div class="w-16 h-16 rounded-full border border-outline flex items-center justify-center mb-6 font-headline-md text-primary">02</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Ölçülendirme</h3>
+<p class="text-body-md text-on-surface-variant">Milimetrik hassasiyetle dijital ölçüler alıyoruz.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center reveal" style="transition-delay: 200ms;">
+<div class="w-16 h-16 rounded-full border border-outline flex items-center justify-center mb-6 font-headline-md text-primary">03</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Tasarım</h3>
+<p class="text-body-md text-on-surface-variant">3D görselleştirme ile hayalinizi dijital ortamda sunuyoruz.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center reveal" style="transition-delay: 300ms;">
+<div class="w-16 h-16 rounded-full border border-outline flex items-center justify-center mb-6 font-headline-md text-primary">04</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Üretim</h3>
+<p class="text-body-md text-on-surface-variant">Atölyemizde en iyi malzemelerle titizlikle üretiyoruz.</p>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col items-center text-center reveal" style="transition-delay: 400ms;">
+<div class="w-16 h-16 rounded-full border border-outline flex items-center justify-center mb-6 font-headline-md text-primary">05</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Montaj</h3>
+<p class="text-body-md text-on-surface-variant">Sertifikalı ekibimizle kusursuz kurulum gerçekleştiriyoruz.</p>
+</div>
+<!-- Step 6 -->
+<div class="flex flex-col items-center text-center reveal" style="transition-delay: 500ms;">
+<div class="w-16 h-16 rounded-full border border-outline flex items-center justify-center mb-6 font-headline-md text-primary">06</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">Teslim</h3>
+<p class="text-body-md text-on-surface-variant">Yaşam alanınızı hayal ettiğiniz gibi teslim ediyoruz.</p>
+</div>
+</div>
+</section>
+<!-- Numbers -->
+<section class="bg-primary py-stack-md px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-gutter text-white text-center">
+<div class="reveal">
+<div class="font-display-lg text-[48px] md:text-display-lg mb-2">150+</div>
+<div class="font-label-caps text-label-caps text-white/60">Tamamlanan Proje</div>
+</div>
+<div class="reveal" style="transition-delay: 100ms;">
+<div class="font-display-lg text-[48px] md:text-display-lg mb-2">100%</div>
+<div class="font-label-caps text-label-caps text-white/60">Özel Ölçü Üretim</div>
+</div>
+<div class="reveal" style="transition-delay: 200ms;">
+<div class="font-display-lg text-[48px] md:text-display-lg mb-2">10+</div>
+<div class="font-label-caps text-label-caps text-white/60">Yıllık Deneyim</div>
+</div>
+<div class="reveal" style="transition-delay: 300ms;">
+<div class="font-display-lg text-[48px] md:text-display-lg mb-2">98%</div>
+<div class="font-label-caps text-label-caps text-white/60">Müşteri Memnuniyeti</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto text-center overflow-hidden">
+<span class="material-symbols-outlined text-secondary text-5xl mb-8">format_quote</span>
+<div class="relative" id="testimonial-slider">
+<div class="reveal">
+<p class="font-headline-md text-headline-md text-primary max-w-4xl mx-auto italic">"Mutfak tasarımımız için LOVA Dizayn ile çalıştık. Her detayda gösterdikleri özen ve üretim kalitesi beklediğimizin çok üzerindeydi. Tam zamanında teslimat için ayrıca teşekkür ederiz."</p>
+<div class="mt-8">
+<span class="font-label-caps text-label-caps text-primary block">Melih &amp; Seda Y.</span>
+<span class="text-body-md text-on-surface-variant">İstanbul, Villakent Projesi</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Instagram Showcase -->
+<section class="px-margin-desktop max-w-container-max mx-auto py-stack-md">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline-md text-headline-md text-primary">Instagram'da Bizi Takip Edin</h2>
+<a class="font-label-caps text-label-caps text-secondary" href="#">@lovadizayn</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
+<img alt="Insta 1" class="aspect-square object-cover" data-alt="Instagram post showing a close up of a luxury kitchen cabinet handle and textured finish. Cool tones and minimalist photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEvaByAWDiNJDEyB_aRhneaJgIw09xsH9szHgGy0t-Bq0Jogt7Lep7UCnsPWqaAAgpX6KmHdQS5FYJ5uuNoyA-X-eRykLhEhpsrqf4Zy0ZAoIun294kT4rcCiIFajuT-bOGLrdcoh8oklpiuVE36JgPqlH4E2OB6T8bOBFGlhv1GJcxUBPdFJa-Oqd8mWsH2mTf5im8Vm59ZNIo3D2HdKkABI-bryOLT-hfnx2pr6oNVaC5ef3LLCFFW__ZUSgQoiyktYC9noHng"/>
+<img alt="Insta 2" class="aspect-square object-cover" data-alt="Instagram post featuring a beautifully set dining table in a custom-designed open-plan living room. Warm lighting and elegant home decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSuwqRKGs22pQOhzZF3Tnd4ADBR4TG1hoJjkxoo9kJDVSQv7JGoEFSOARyMlTRgGlbsulHN6r5I4p5pZFzYRiPdUOPqfyhHBz7u2CpFadHzl9N36CAhVkHbAw8M9p6qw9NKgizCGsBfKwv1eCfI68veSHZPaSTvCbPFFM8OStDaVZZFpwQ5mPCU2uj7q7-i0d5qTU_BfL4M1kncwyS7UtBS-irY7VqEl47jETsd4WsXewbiLKevGp0mHBYyRYnmo_D5RKDThc5Mw"/>
+<img alt="Insta 3" class="aspect-square object-cover" data-alt="Instagram post of a modern workspace with bespoke cabinetry and a designer chair. Soft morning light and clean vertical lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCnC9LxeCjXWA9f0y9LJs1knhpvJLZuTxrp_deKVjBIkYLJSd_LQpcKfVN4u79WNi6sFF75vLBZTwkn-y6kuQcj8EzOvw3ffnLuNrs8n7aVn8Zu3p3e-40fRQRChUPfNAc_W2HviUazGkirNZj9Dj4x5DFIQLjPx7Q9nomTWYaPQ3bSsgyseaL46AKS9Vr129mDMdQ6c69pvycBskYxmnbRZIbhO3bDdEsPQbvOocbiS2iTgNR0Mf7G6AxcqOD59F73TdOoLBqOQ"/>
+<img alt="Insta 4" class="aspect-square object-cover" data-alt="Instagram post showcasing the lighting design in a high-end staircase area. Dramatic shadows and minimalist architectural details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbpca1ETqieQhYC0v0j6P-h0r8Mrdry-52vUuNIHENfj1mmAOyDKFDcKjkdUUGcWEVtY77A6SrHavMJzTD4CW2SlvjIaoJxCU-gky41LeT6Yk5JqQri8Y-lPrZQ9i3d8cg0vPJAlSiconf24heRFcdQFLtZauyv59q6anKal-ZQ2sHukS7suHNIJayq03s3bXZo25BFhxUYom4Rjo4siX9kG86pu9cZMVmlLfVS5uVb95dVIbg1WSrgKzOrLRWW3nLGREqLyFdqg"/>
+<img alt="Insta 5" class="aspect-square object-cover" data-alt="Instagram post of a minimalist living room during the afternoon, showing the texture of white linen curtains and custom furniture. Serene atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA44j6A_mHKvKaROl3wpjUnAJXt1yZ0P2nAYsW6OTjj14k3V8stHdYEfjSRIu2oQX2n2TSyLt5D5W21vmIA5l9d6HxoJgP7exgqmxZ1IIsIJBaVPoivU10j3HRoa_Ias3HFztyT0DZK02wQP-7Q12bQKGPPqjD39PTgcZObv4U1y5IFIZOCkkPVP2xImdARgR6_CCITVTvJuxkKgXkH55CdGGtBaVJWaxXDc5wXZSI3FGJCGLoQZ1golIXMNjg3JbotrtQE2z-UMQ"/>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-stack-lg px-margin-desktop bg-surface-container-low" id="iletisim">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-md">
+<div class="reveal">
+<h2 class="font-display-lg text-display-lg text-primary mb-12">Birlikte Tasarlayalım.</h2>
+<p class="font-body-lg text-on-surface-variant mb-12 max-w-md">Projeniz için ücretsiz keşif ve ön görüşme randevusu alabilirsiniz. Ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+<div class="space-y-8">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-secondary text-3xl">phone</span>
+<div>
+<span class="font-label-caps text-label-caps block text-secondary">Bizi Arayın</span>
+<span class="font-body-lg text-primary">+90 (555) 000 00 00</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-secondary text-3xl">mail</span>
+<div>
+<span class="font-label-caps text-label-caps block text-secondary">E-posta Gönderin</span>
+<span class="font-body-lg text-primary">info@lovadizayn.com</span>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<a class="w-12 h-12 border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-12 h-12 border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-surface p-10 reveal" style="transition-delay: 200ms;">
+<form class="space-y-8">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-secondary uppercase">Ad Soyad</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-all" placeholder="Adınız ve soyadınız" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-secondary uppercase">Telefon</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-all" placeholder="05XX XXX XX XX" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-secondary uppercase">E-posta</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-all" placeholder="E-posta adresiniz" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-secondary uppercase">Proje Türü</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-all">
+<option>Mutfak Tasarımı</option>
+<option>Vestiyer &amp; Mobilya</option>
+<option>Komple Ev Dekorasyonu</option>
+<option>Ticari / Ofis Projesi</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-secondary uppercase">Mesajınız</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-all" placeholder="Projenizden kısaca bahsedin..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 font-label-caps text-label-caps hover:bg-secondary transition-all" type="submit">Gönder</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-tertiary-container w-full pt-stack-lg pb-stack-md border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<a class="font-headline-md text-headline-md text-primary dark:text-tertiary-fixed font-bold tracking-tighter" href="#">LOVA DIZAYN</a>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container max-w-xs">
+                    Yaşam alanlarınıza değer katan mimari çözümler ve kişiye özel üretimler ile lüksü evinize taşıyoruz.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-label-caps text-label-caps text-primary dark:text-tertiary-fixed uppercase mb-6">Menü</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors" href="#projeler">Projeler</a></li>
+<li><a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors" href="#hizmetler">Hizmetler</a></li>
+<li><a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors" href="#hakkimizda">Hakkımızda</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary dark:text-tertiary-fixed uppercase mb-6">Sosyal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors" href="#">Instagram</a></li>
+<li><a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors" href="#">WhatsApp</a></li>
+</ul>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary dark:text-tertiary-fixed uppercase mb-6">Bülten</h4>
+<p class="font-body-md text-on-surface-variant dark:text-on-tertiary-container mb-6">Yeni projelerimizden ve tasarım trendlerinden haberdar olun.</p>
+<div class="flex">
+<input class="bg-surface-container border border-outline-variant px-4 py-2 w-full focus:ring-0 focus:border-secondary transition-all" placeholder="E-posta" type="email"/>
+<button class="bg-primary text-white px-6 py-2 hover:bg-secondary transition-all">Kayıt</button>
+</div>
+</div>
+</div>
+<div class="mt-stack-md px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant dark:border-outline pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container">© 2024 LOVA Dizayn. Tüm Hakları Saklıdır.</span>
+<div class="flex gap-8">
+<a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors" href="#">Gizlilik Politikası</a>
+<a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors" href="#">Kullanım Koşulları</a>
+</div>
+</div>
+</footer>
+<script>
+        // Reveal on scroll logic
+        const observerOptions = {
+            root: null,
+            threshold: 0.15,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Floating Action Button logic (Conditional suppression handled by not including a global FAB if not matching criteria)
+    </script>
+</body></html>
